@@ -1,10 +1,13 @@
-
-// Define that you want to use the input / output library
 use std::io;
-
-// You could bring all public items under io into scope
-// use std::io::*;
 
 fn main() {
 
+    let mut name = String::new();
+
+    let greeting = "Nice to meet you";
+
+    io::stdin().read_line(&mut name)
+        .expect("Didn't Receive Input");
+
+    println!("Hello {}! {}", name.trim_end(), greeting);
 }
